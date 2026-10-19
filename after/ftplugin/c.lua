@@ -1,0 +1,33 @@
+-- vim.cmd.colorscheme("gruber-darker")
+-- vim.api.nvim_set_hl(0, "@punctuation.bracket.c", {
+--     fg = "#ffffff",
+-- })
+--
+-- vim.api.nvim_set_hl(0, "@keyword.directive.c", {
+--     fg = "#95a99f",
+-- })
+--
+-- vim.api.nvim_set_hl(0, "@keyword.import.c", {
+--     fg = "#95a99f",
+-- })
+--
+-- vim.api.nvim_set_hl(0, "@type.builtin.c", {
+--     fg = "#95a99f",
+-- })
+--
+-- vim.api.nvim_set_hl(0, "@property.c", {
+--     fg = "#ffffff",
+-- })
+--
+-- vim.api.nvim_set_hl(0, "@function.c", {
+--     fg = "#96a6c8",
+-- })
+--
+-- -- vim.api.nvim_set_hl(0, "@function.call.c", {
+-- --     fg = "#ffffff",
+-- -- })
+--
+-- vim.api.nvim_set_hl(0, "@number", {
+--     fg = "#ffffff",
+-- })
+--
