@@ -99,4 +99,3 @@ vim.keymap.set("n", "[q", function()
     vim.cmd("cprev")
     vim.cmd("normal! zz")
 end)
-

@@ -15,6 +15,7 @@ return {
             "vim",
             "vimdoc",
             "bash",
+            "zsh",
             "c",
             "cpp",
             "python",
