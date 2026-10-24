@@ -4,17 +4,15 @@ vim.keymap.set("n", "<space>/", function()
 end, { desc = "Case-insensitive search" })
 
 -- unmappking gss
-vim.keymap.del("n", "gss")
+if vim.fn.maparg("gss", "n") ~= "" then
+    vim.keymap.del("n", "gss")
+end
 
 -- incremental search
 vim.opt.incsearch = true
 -- highlight search
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { silent = true })
-
-
--- window navigation 
-vim.keymap.set("n", "<space>w", "<C-w>", { desc = "Window prefix" })
 
 -- marks
 vim.keymap.set("n", "'", function()
@@ -27,13 +25,21 @@ vim.keymap.set("n", "`", function()
     return "`" .. char .. "zz"
 end, { expr = true, desc = "Jump to exact mark and center" })
 
+-- j,k to gj,gk
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
+
+-- keep the cursor in the same place when joining lines
+vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "gJ", "mzgJ`z")
+
 -- excuting lua files
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
 vim.keymap.set("v", "<space>x", ":lua<CR>")
 
--- Press Leader + p to jump to the last accessed window
-vim.keymap.set('n', '<space>p', '<C-w>p')
+-- split window horizntally
+vim.keymap.set('n', '<C-w>b', '<C-w>s', { desc = 'Horizontal split' })
 
 -- Visual mode: scroll up/down while keeping the selection
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
@@ -41,14 +47,16 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
 vim.keymap.set('v', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
 vim.keymap.set('v', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
 
--- not losing the yank register
-vim.keymap.set('x', 'p', '"_dP', { noremap = true, silent = true })
+-- not losing & losing the yank register
+vim.keymap.set("x", "p", "P", { desc = "Paste without losing yank" })
+vim.keymap.set("x", "<Space>p", "p", { desc = "Paste and replace yank register" })
 
 -- making 'd'&'c' deleting without yanking into a register
 vim.keymap.set("n", "d", '"_d')
 vim.keymap.set("v", "d", '"_d')
 vim.keymap.set("n", "c", '"_c')
 vim.keymap.set("v", "c", '"_c')
+-- foo=set
 
 -- exist to the current dir in the terminal
 vim.keymap.set("n", "<space>ex", vim.cmd.Ex) -- netrw
@@ -57,12 +65,14 @@ vim.keymap.set("n", "<space>ex", vim.cmd.Ex) -- netrw
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+
 -- yanking goes to the system clipboard
 vim.keymap.set({ "n", "v" }, "<space>y", [["+y]])
 vim.keymap.set("n", "<space>Y", [["+Y]])
 
 -- visual block mode
 vim.keymap.set('n', '<space>v', '<C-v>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-v>', 'v$', { desc = 'Select to end of line' })
 
 -- replace the current word in the entire file
 vim.keymap.set("n", "<space>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

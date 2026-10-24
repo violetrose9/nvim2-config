@@ -10,4 +10,7 @@ return {
             block = "gC",  -- works like gC<motion> or gC in visual mode
         },
     },
+    config = function()
+        require("Comment.ft").set("tmux", "#%s")
+    end
 }

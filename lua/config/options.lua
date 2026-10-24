@@ -8,7 +8,7 @@ vim.opt.expandtab = true
 
 vim.opt.list = true
 vim.opt.listchars = {
-    space = '·',          -- Show regular spaces
+    space = '.',          -- Show regular spaces
     trail = '•',          -- Show trailing spaces
     tab = '» ',           -- Show tabs
     nbsp = '␣',          -- Show non-breaking spaces

@@ -3,7 +3,8 @@ return {
         'stevearc/oil.nvim',
 	---@module 'oil'
 	---@type oil.SetupOpts
-	opts = {},
+	opts = {
+    },
 	-- Optional dependencies
 	dependencies = { { "nvim-mini/mini.icons", opts = {} } },
 	-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
@@ -13,6 +14,7 @@ return {
 		require("oil").setup({
 			keymaps = {
 				["gs"] = false,
+                ["<C-l>"] = false,
 			},
 		})
 		vim.api.nvim_create_user_command("O", "Oil", {})
