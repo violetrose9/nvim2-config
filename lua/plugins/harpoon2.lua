@@ -14,11 +14,11 @@ return {
         })
 
         vim.keymap.set("n", "<space>a", function() harpoon:list():add() end)
-        vim.keymap.set("n", "<space>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+        vim.keymap.set("n", "<space>H", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
-        vim.keymap.set("n", "<C-h>;", function() harpoon:list():select(1) end)
-        vim.keymap.set("n", "<C-h>l", function() harpoon:list():select(2) end)
-        vim.keymap.set("n", "<C-h>j", function() harpoon:list():select(3) end)
-        vim.keymap.set("n", "<C-h>k", function() harpoon:list():select(4) end)
+        vim.keymap.set("n", "<space>hh", function() harpoon:list():select(1) end)
+        vim.keymap.set("n", "<space>hj", function() harpoon:list():select(2) end)
+        vim.keymap.set("n", "<space>hk", function() harpoon:list():select(3) end)
+        vim.keymap.set("n", "<space>hl", function() harpoon:list():select(4) end)
     end
 }

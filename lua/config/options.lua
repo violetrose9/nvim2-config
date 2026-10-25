@@ -1,4 +1,4 @@
-vim.cmd.colorscheme("gruber-darker")
+-- vim.cmd.colorscheme("gruber-darker")
 -- vim.cmd.colorscheme("rose-pine")
 -- Indentation
 vim.opt.shiftwidth = 4
@@ -8,7 +8,7 @@ vim.opt.expandtab = true
 
 vim.opt.list = true
 vim.opt.listchars = {
-    space = '.',          -- Show regular spaces
+    -- space = '.',          -- Show regular spaces
     trail = '•',          -- Show trailing spaces
     tab = '» ',           -- Show tabs
     nbsp = '␣',          -- Show non-breaking spaces

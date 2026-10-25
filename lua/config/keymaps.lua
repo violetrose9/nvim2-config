@@ -1,7 +1,12 @@
--- ctrl+'/' -> case-INsensitive search
+-- <space>/ -> case-INsensitive search
 vim.keymap.set("n", "<space>/", function()
   vim.fn.feedkeys("/\\c", "n")
 end, { desc = "Case-insensitive search" })
+
+-- ctrl+/ -> match exact whole word
+vim.keymap.set("n", "<C-/>", "/\\<\\><Left><Left>", {
+  desc = "Search whole word",
+})
 
 -- unmappking gss
 if vim.fn.maparg("gss", "n") ~= "" then

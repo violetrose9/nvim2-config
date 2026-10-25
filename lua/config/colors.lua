@@ -1,5 +1,4 @@
 vim.cmd.colorscheme("gruber-darker")
--- vim.cmd.colorscheme("rose-pine")
 
 vim.api.nvim_set_hl(0, "Search", {
     fg = "#f4f4ff",
